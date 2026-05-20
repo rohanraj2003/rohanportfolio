@@ -1095,7 +1095,11 @@ const certifications = [
     title: "Python Full Stack Internship",
     issuer: "Baabtra Cyber Square",
     desc: "Completed intensive full-stack development training with Django, REST APIs, and database management.",
-    badge: "🐍",
+    badge: (
+      <svg className="h-8 w-8 text-[#3776AB]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.25.18c.9 0 1.66.07 2.3.2a14.21 14.21 0 0 1 2.94 1.15c.38.2.8.56 1.04.91.27.4.45.87.5 1.38.03.3.05.63.05.99v2.24h-2.24c-1.5 0-2.72 1.22-2.72 2.72v2.24h-4.48c-1.5 0-2.72-1.22-2.72-2.72V5.55c0-1.5 1.22-2.72 2.72-2.72h4.48V.56c0-.18-.04-.38-.13-.53-.13-.2-.36-.35-.61-.35H14.25zM9.75 23.82c-.9 0-1.66-.07-2.3-.2a14.21 14.21 0 0 1-2.94-1.15c-.38-.2-.8-.56-1.04-.91-.27-.4-.45-.87-.5-1.38-.03-.3-.05-.63-.05-.99v-2.24h2.24c1.5 0 2.72-1.22 2.72-2.72v-2.24h4.48c1.5 0 2.72 1.22 2.72 2.72v3.63c0 1.5-1.22 2.72-2.72 2.72h-4.48v2.24c0 .18.04.38.13.53.13.2.36.35.61.35h3.63z" />
+      </svg>
+    ),
     verify: "https://baabtra.com/",
     color: "from-emerald-500/20 to-emerald-600/5",
     border: "border-emerald-500/20",
