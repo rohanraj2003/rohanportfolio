@@ -16,7 +16,7 @@ const themes: Record<Theme, { primary: string; secondary: string; ring: string; 
 const ThemeContext = createContext<{
   theme: Theme;
   setTheme: (t: Theme) => void;
-}>({ theme: "teal", setTheme: () => {} });
+}>({ theme: "teal", setTheme: () => { /* noop */ } });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("teal");

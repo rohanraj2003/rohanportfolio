@@ -140,7 +140,7 @@ export default function ChatBot() {
                 <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-[#0d0d1a] bg-emerald-400" />
               </div>
               <div>
-                <p className="text-sm font-semibold tracking-tight text-white">Rohan's Assistant</p>
+                <p className="text-sm font-semibold tracking-tight text-white">Rohan&apos;s Assistant</p>
                 <p className="text-xs text-emerald-400">Online · Ask me anything</p>
               </div>
             </div>
