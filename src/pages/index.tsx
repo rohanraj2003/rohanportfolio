@@ -5,9 +5,6 @@ import styles from "@/styles/Home.module.css";
 import { Button } from "@/components/ui/button";
 import {
   ChevronRight,
-  Code2,
-  Frame,
-  MonitorSmartphone,
   Shield,
   Database,
   Lightbulb,
@@ -37,7 +34,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import VanillaTilt from "vanilla-tilt";
-import { motion, useAnimate, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Tooltip } from "recharts";
 import { Github, Linkedin, FileText } from "lucide-react";
 import dynamic from "next/dynamic";
@@ -90,7 +87,12 @@ function CountUp({ value }: { value: string }) {
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
-const typewriterRoles = ["Full-Stack Developer", "Django Specialist", "Cybersecurity Enthusiast"];
+const typewriterRoles = [
+  "Python Developer",
+  "Backend & API Engineer",
+  "Data & Quality Analyst",
+  "Cybersecurity Enthusiast"
+];
 
 function useTypewriter(words: string[], typingSpeed = 60, pauseMs = 1800, deletingSpeed = 35) {
   const [display, setDisplay] = useState("");
@@ -132,19 +134,19 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-// Slide in from left
-function SlideLeft({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -80 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
-      viewport={{ once: true, margin: "-80px" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+// Slide in from left (commented out to clear ESLint warning)
+// function SlideLeft({ children }: { children: React.ReactNode }) {
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0, x: -80 }}
+//       whileInView={{ opacity: 1, x: 0 }}
+//       transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+//       viewport={{ once: true, margin: "-80px" }}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// }
 
 // Slide in from right
 function SlideRight({ children }: { children: React.ReactNode }) {
@@ -297,96 +299,71 @@ const techPills = [
 ];
 
 const skills = [
-  { label: "Python", pct: 90 },
-  { label: "Django", pct: 85 },
-  { label: "MySQL", pct: 75 },
-  { label: "JavaScript", pct: 70 },
-  { label: "HTML & CSS", pct: 90 },
-  { label: "Cybersecurity", pct: 65 },
+  { label: "Python", pct: 92 },
+  { label: "Django & DRF", pct: 88 },
+  { label: "MySQL & MongoDB", pct: 80 },
+  { label: "Software Testing & QA", pct: 85 },
+  { label: "Data Analysis", pct: 80 },
+  { label: "Cybersecurity", pct: 82 },
 ];
 
 const aboutStats = [
   { label: "Years of experience", value: "1+" },
-  { label: "Technologies mastered", value: "5+" },
-  { label: "Certifications", value: "3+" },
-  
+  { label: "Technologies mastered", value: "10+" },
+  { label: "Certifications", value: "4+" },
 ];
 
 const projects = [
   {
-    title: "Unqueue",
-    description: "E-commerce platform for selling digital products",
+    title: "FloDesk – Lead Management System",
+    description: "Streamlined student enquiry handling using Django and MySQL, resulting in a 30% improvement in lead visibility and data metrics.",
     image: "/assets/unqueue.webm",
-    href: "https://unqueue.shop/",
+    href: "https://github.com/rohanraj2003/rohanportfolio",
   },
   {
-    title: "InfiniteVPS",
-    description: "High performance VPS hosting solution",
-    image: "/assets/infinitevps.webm",
-    href: "#",
-  },
-  {
-    title: "TranslateBot",
-    description: "Powerful Multilingual Translation Bot for Discord",
-    image: "/assets/translate_bot.webm",
-    href: "https://translatebot.app/",
-  },
-  {
-    title: "Wrona",
-    description: "Robotics-focused technology company",
+    title: "Pain & Palliative Care Management",
+    description: "Django-based medical system optimizing patient and clinical workflows, improving daily care coordination efficiency by 25%.",
     image: "/assets/wrona.jpeg",
-    href: "https://www.wrona.com/",
+    href: "https://github.com/rohanraj2003/rohanportfolio",
   },
   {
-    title: "This website",
-    description: "My personal website",
-    image: "/assets/portfolio.webm",
-    href: "https://github.com/wendoj/portfolio",
+    title: "PyAudit & Data Sandbox Suite",
+    description: "An automated Python script suite executing regression test runs and profiling system log datasets to verify application integrity.",
+    image: "/assets/translate_bot.webm",
+    href: "https://github.com/rohanraj2003/rohanportfolio",
   },
 ];
 
 const services = [
   {
-    service: "Frontend Development",
+    service: "Python & Backend Development",
     description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
-    icon: Code2,
-  },
-  {
-    service: "UX Design",
-    description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
-    icon: Frame,
-  },
-  {
-    service: "Responsive Design",
-    description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
-    icon: MonitorSmartphone,
-  },
-  {
-    service: "Backend Development",
-    description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
+      "Designing scalable server-side APIs, full-stack Django platforms, and secure REST frameworks from design to deployment.",
     icon: Server,
   },
   {
-    service: "CRUD Operations",
+    service: "Data Analysis & Insights",
     description:
-      "Building reliable create, read, update, and delete functionalities for dynamic applications.",
+      "Profiling datasets, developing algorithms, and analyzing operational metrics to extract business trends and optimize processes.",
     icon: Database,
   },
   {
-    service: "Tech Exploration",
+    service: "Software Testing & QA",
     description:
-      "Continuously learning and experimenting with AI tools and the latest advancements in technology.",
-    icon: Lightbulb,
+      "Writing regression tests, executing debugging workflows, and auditing codebases to reduce bug incidents by 40% and ensure absolute quality.",
+    icon: CheckCircle2,
   },
   {
-    service: "Cybersecurity & Ethical Hacking",
+    service: "Cybersecurity & Hardening",
     description:
-      "Identifying vulnerabilities and securing systems using practical techniques, supported by an IBM certification with high achievement.",
+      "IBM-Certified vulnerability assessment using Burp Suite, Wireshark, and Nessus to prevent 98% of security flaws.",
     icon: Shield,
+  },
+  {
+    service: "Tech Exploration (AI & ML)",
+    description:
+      "Exploring AI models, machine learning, and cutting-edge automation tools to optimize dev pipelines.",
+    icon: Lightbulb,
   },
 ];
 
@@ -648,7 +625,7 @@ export default function Home() {
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
             {/* Apple-style scroll-driven text reveal */}
-            <ScrollRevealText text="I'm a full-stack developer focused on Python, Django, HTML, CSS, JavaScript, Bootstrap, MySQL, and REST APIs — building scalable and efficient web applications from concept to deployment. I also have a strong interest in cybersecurity, exploring vulnerability assessment and secure development practices." />
+            <ScrollRevealText text="I'm a Python Developer focused on Django, databases, and REST APIs — building secure, high-performance web applications, automated test suites, and data profiling systems. I have a strong foundation in cybersecurity and a deep passion for exploring AI, machine learning, and advanced developer tools." />
 
             <div className="grid grid-cols-3 gap-8">
               {aboutStats.map((stat) => (
@@ -1022,33 +999,33 @@ const timelineItems = [
   {
     type: "work",
     title: "Software Developer Intern",
-    org: "Infocampus",
+    org: "Infocampus, Kozhikode",
     period: "Jan 2026 – Present",
-    desc: "Developing full-stack applications using Python and Django. Working on backend logic, APIs, database management, and frontend with HTML, CSS, Bootstrap.",
+    desc: "Assisting in full-stack Django development, database management, and API integrations. Collaborating on debugging, testing, and frontend components using HTML, CSS, and Bootstrap in Git-based Agile flows.",
     current: true,
   },
   {
     type: "edu",
     title: "Master of Computer Applications (MCA)",
-    org: "AWH Engineering College",
+    org: "AWH Engineering College, Kozhikode, Kerala",
     period: "2024 – 2026",
-    desc: "Specializing in full-stack development, cybersecurity, and software engineering principles.",
+    desc: "Specializing in software engineering, database design, advanced algorithms, and secure systems architecture.",
     current: true,
   },
   {
     type: "work",
     title: "Python Full Stack Intern",
-    org: "Baabtra Cyber Square",
+    org: "Baabtra Cyber Square, Kozhikode, Kerala",
     period: "Jun 2023 – Dec 2023",
-    desc: "Built scalable Django apps, reduced loading time by 25%, decreased bugs by 40%, improved deployment timelines by 20%, and reduced vulnerabilities by 98%.",
+    desc: "Developed scalable web applications in Python/Django, reducing load times by 25%. Executed automated testing and debugging to reduce bugs by 40%. Delivered cross-functional enhancements with 10% more adoption, optimized deployment timelines by 20%, and blocked 98% of security vulnerabilities.",
     current: false,
   },
   {
     type: "edu",
-    title: "Bachelor of Computer Application",
-    org: "ICA College",
+    title: "Bachelor of Computer Science",
+    org: "ICA College of Applied Arts & Science, Kozhikode, Kerala",
     period: "2020 – 2023",
-    desc: "Foundation in computer science, programming, data structures, and algorithms.",
+    desc: "Core foundation in computational theory, object-oriented programming, logical reasoning, data structures, and relational databases.",
     current: false,
   },
 ];
@@ -1188,16 +1165,10 @@ function SkillsRadar() {
     if (inView) setAnimated(true);
   }, [inView]);
 
-  const data = [
-    { skill: "Python",        value: animated ? 90 : 0 },
-    { skill: "Django",        value: animated ? 85 : 0 },
-    { skill: "MySQL",         value: animated ? 75 : 0 },
-    { skill: "JavaScript",   value: animated ? 70 : 0 },
-    { skill: "HTML & CSS",   value: animated ? 90 : 0 },
-    { skill: "Cybersecurity",value: animated ? 65 : 0 },
-    { skill: "REST APIs",     value: animated ? 80 : 0 },
-    { skill: "Bootstrap",     value: animated ? 78 : 0 },
-  ];
+  const data = skills.map((s) => ({
+    skill: s.label,
+    value: animated ? s.pct : 0,
+  }));
 
   return (
     <div ref={ref} className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-8 backdrop-blur-md">
@@ -1457,8 +1428,8 @@ function BentoGrid() {
           <div className="bento-card col-span-2 flex items-center justify-around p-6">
             {[
               { n: "1+", label: "Years exp" },
-              { n: "5+", label: "Tech stack" },
-              { n: "3+", label: "Certs" },
+              { n: "10+", label: "Tech stack" },
+              { n: "4+", label: "Certs" },
             ].map((s) => (
               <div key={s.label} className="flex flex-col items-center gap-1">
                 <span className="clash-grotesk text-gradient text-3xl font-bold">{s.n}</span>
@@ -1492,7 +1463,7 @@ function BentoGrid() {
           <div className="bento-card col-span-2 flex flex-col justify-between p-6 xl:col-span-1">
             <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Learning now</p>
             <div className="mt-4 flex flex-col gap-2">
-              {["React / Next.js", "Docker & DevOps", "Penetration Testing"].map((item) => (
+              {["AI, ML & Latest Tools", "QA & Test Automation", "Data Analytics"].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-float" />
                   <span className="text-sm tracking-tight">{item}</span>
