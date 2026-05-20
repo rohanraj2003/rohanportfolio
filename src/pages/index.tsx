@@ -877,8 +877,7 @@ export default function Home() {
 }
 
 function ContactForm() {
-  const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? "YOUR_FORM_ID";
-  const [state, handleSubmit] = useForm(formId);
+  const [state, handleSubmit] = useForm("YOUR_FORM_ID");
 
   if (state.succeeded) {
     return (
